@@ -96,6 +96,7 @@ export default function Home() {
               <input
                 type="radio"
                 name="testType"
+                disabled
                 onChange={() => setTestType("drawing")}
                 className="checkbox checkbox-primary"
               />

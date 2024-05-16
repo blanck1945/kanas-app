@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
 export default function Test() {
   const canvasRef = useRef(null);
   const [drawing, setDrawing] = useState(false);
-  const { testType, test } = useKanas();
+  const { testType, firstTest } = useKanas();
   const router = useRouter();
 
   //   useEffect(() => {
@@ -38,34 +38,34 @@ export default function Test() {
   //     };
   //   }, []);
 
-  const draw = (event) => {
-    if (!drawing) return;
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
-    const rect = canvas.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
+  // const draw = (event) => {
+  //   if (!drawing) return;
+  //   const canvas = canvasRef.current;
+  //   const ctx = canvas.getContext("2d");
+  //   const rect = canvas.getBoundingClientRect();
+  //   const x = event.clientX - rect.left;
+  //   const y = event.clientY - rect.top;
 
-    // context.beginPath();
-    // context.arc(x, y, 10, 0, 2 * Math.PI);
-    console.warn(x, y);
-    ctx.fillStyle = "white";
-    ctx.fillRect(x, y, 7, 7);
-  };
+  //   // context.beginPath();
+  //   // context.arc(x, y, 10, 0, 2 * Math.PI);
+  //   console.warn(x, y);
+  //   ctx.fillStyle = "white";
+  //   ctx.fillRect(x, y, 7, 7);
+  // };
 
-  const drawInit = (event) => {
-    setDrawing(true);
-    draw(event);
-  };
+  // const drawInit = (event) => {
+  //   setDrawing(true);
+  //   draw(event);
+  // };
 
-  const drawEnd = (event) => {
-    setDrawing(false);
-    draw(event);
-  };
+  // const drawEnd = (event) => {
+  //   setDrawing(false);
+  //   draw(event);
+  // };
 
   return (
     <main className="flex min-h-screen flex-col items-center  justify-between p-24 py-12">
-      {testType === "drawing" && (
+      {/* {testType === "drawing" && (
         <div>
           <canvas
             ref={canvasRef}
@@ -75,11 +75,11 @@ export default function Test() {
             onMouseUp={drawEnd}
           ></canvas>
         </div>
-      )}
+      )} */}
       <div className="card lg:card-side bg-base-100 shadow-xl w-3/4">
         <div className="card-body flex-col gap-8">
           <div className="grid grid-cols-5 gap-5 mx-8">
-            {test.map((el, index) => (
+            {/* {test.map((el, index) => (
               <label
                 key={index}
                 className="form-control w-full max-w-xs flex items-center justify-center"
@@ -105,7 +105,8 @@ export default function Test() {
                   />
                 )}
               </label>
-            ))}
+            ))} */}
+            <h2>Aca va el drawing</h2>
           </div>
           <TestButtons />
         </div>
